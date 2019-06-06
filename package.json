@@ -4,7 +4,7 @@
   "version": "0.9.1",
   "scripts": {
     "all": "run-s optimize build",
-    "optimize": "svgo -f source/raw -r -o source/symbols",
+    "optimize": "svgo -f source/raw -r -o source/symbols --config '{ \"plugins\": [ { \"removeAttrs\": { \"attrs\": [ \"font-weight\", \"font-family\", \"overflow\", \"style\" ] } }] }'",
     "build": "node tasks/build.js"
   },
   "keywords": [
